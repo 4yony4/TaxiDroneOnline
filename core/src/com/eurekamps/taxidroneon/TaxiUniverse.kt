@@ -8,8 +8,13 @@ import com.badlogic.gdx.physics.box2d.World
 
 class TaxiUniverse {
 
+    companion object{
+        val PIXEL_PER_METER=32f
+    }
+
     var world:World
     var orthographicCamera:OrthographicCamera
+
 
     constructor() {
 
