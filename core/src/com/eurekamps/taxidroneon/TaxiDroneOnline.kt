@@ -17,6 +17,11 @@ class TaxiDroneOnline: ApplicationAdapter() {
         //img = Texture("badlogic.jpg")
     }
 
+    override fun resize(width: Int, height: Int) {
+        super.resize(width, height)
+        taxiUniverse.resize(width,height)
+    }
+
     override fun render() {
         taxiUniverse.draw()
         /*batch!!.begin()
