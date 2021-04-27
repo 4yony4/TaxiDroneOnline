@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" width="40" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="4" nextobjectid="5">
+<map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" width="40" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="7" nextobjectid="24">
  <tileset firstgid="1" source="maptiles2.tsx"/>
  <layer id="1" name="Tile Layer 1" width="40" height="20">
   <data encoding="csv">
@@ -25,11 +25,6 @@
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,15,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14
 </data>
  </layer>
- <objectgroup id="2" name="ground">
-  <object id="1" x="9.72572" y="2295.27">
-   <polygon points="0,0 1774.94,9.72572 1779.81,-121.572 2168.84,-116.709 2173.7,-632.172 3822.21,-622.446 3831.93,-1011.48 5110.87,-1006.61 5110.87,267.457 -4.86286,252.869"/>
-  </object>
- </objectgroup>
  <objectgroup id="3" name="islands">
   <object id="2" x="0" y="398.755">
    <polygon points="0,0 899.629,4.86286 894.766,111.846 9.72572,106.983"/>
@@ -40,5 +35,11 @@
   <object id="4" x="3724.95" y="627.309">
    <polygon points="0,0 -9.72572,-111.846 1400.5,-111.846 1385.92,9.72572"/>
   </object>
+ </objectgroup>
+ <objectgroup id="6" name="ground">
+  <object id="19" x="9.72572" y="2236.92" width="1760.36" height="194.514"/>
+  <object id="21" x="1794.4" y="2188.29" width="384.166" height="199.377"/>
+  <object id="22" x="2193.15" y="1692.28" width="1633.92" height="471.698"/>
+  <object id="23" x="3846.52" y="1293.52" width="1274.07" height="325.812"/>
  </objectgroup>
 </map>

@@ -15,8 +15,8 @@ class TaxiUniverse {
     var batch: SpriteBatch? = null
 
     companion object{
-        private val SCALE = 1.0f
-        val PIXEL_PER_METER=128f
+        private val SCALE = 0.5f
+        val PIXEL_PER_METER=64f
         val MAP_PATH="maps/map2.tmx"
     }
 
@@ -29,6 +29,7 @@ class TaxiUniverse {
 
     var tiledMap:TiledMap
     var tiledMapRenderer:OrthogonalTiledMapRenderer
+    var mapParser:MapParser
 
 
 
@@ -39,6 +40,7 @@ class TaxiUniverse {
         orthographicCamera = OrthographicCamera()
         orthographicCamera.setToOrtho(false, Gdx.graphics.width / SCALE, Gdx.graphics.height / SCALE);
 
+
         drone= Drone(world)
         box2DDebugRenderer= Box2DDebugRenderer()
         world.setContactListener(TaxiUniverseCollisionsListener())
@@ -46,7 +48,9 @@ class TaxiUniverse {
         tiledMap=TmxMapLoader().load(MAP_PATH)
         tiledMapRenderer= OrthogonalTiledMapRenderer(tiledMap)
 
-        createGround()
+        mapParser= MapParser()
+        mapParser.parseLayers(world,tiledMap)
+        //createGround()
 
     }
 
@@ -81,8 +85,8 @@ class TaxiUniverse {
 
     private fun cameraUpdate(){
         val position=orthographicCamera.position
-        position.x = drone.body!!.getPosition().x * PIXEL_PER_METER
-        position.y = drone.body!!.getPosition().y * PIXEL_PER_METER
+        position.x = (drone.body!!.getPosition().x * PIXEL_PER_METER)+40*PIXEL_PER_METER
+        position.y = (drone.body!!.getPosition().y * PIXEL_PER_METER)+20*PIXEL_PER_METER
         orthographicCamera.position.set(position)
         orthographicCamera.update()
     }
@@ -103,8 +107,8 @@ class TaxiUniverse {
         shapeRenderer.rect(0f,0f,Gdx.graphics.width.toFloat(),20f)
         shapeRenderer.end();
 
-
-        box2DDebugRenderer!!.render(world,orthographicCamera.combined.scl(PIXEL_PER_METER))*/
+*/
+        box2DDebugRenderer!!.render(world,orthographicCamera.combined.scl(PIXEL_PER_METER))
     }
 
     fun destroy(){
